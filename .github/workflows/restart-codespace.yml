@@ -1,0 +1,24 @@
+name: Auto-Restart Codespace Every 4 Hours
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'  # Every 4 hours
+
+jobs:
+  restart:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install GitHub CLI
+        run: |
+          sudo apt update
+          sudo apt install -y gh
+
+      - name: Authenticate with GitHub CLI using token
+        env:
+          GH_TOKEN: ${{ secrets.CODESPACE_TOKEN }}
+        run: echo "$GH_TOKEN" | gh auth login --with-token
+
+      - name: Restart the Codespace
+        run: |
+          gh codespace start --name fantastic-dollop
