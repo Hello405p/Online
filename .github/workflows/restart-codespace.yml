@@ -2,23 +2,21 @@ name: Auto-Restart Codespace Every 4 Hours
 
 on:
   schedule:
-    - cron: '0 */4 * * *'  # Every 4 hours
+    - cron: '0 */4 * * *'    # every 4 hours
+  workflow_dispatch:         # 👈 enables manual "Run workflow" button
 
 jobs:
   restart:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Install GitHub CLI
-        run: |
-          sudo apt update
-          sudo apt install -y gh
-
-      - name: Authenticate with GitHub CLI using token
-        env:
-          GH_TOKEN: ${{ secrets.CODESPACE_TOKEN }}
-        run: echo "$GH_TOKEN" | gh auth login --with-token
-
-      - name: Restart the Codespace
-        run: |
-          gh codespace start --name fantastic-dollop
+    - name: Restart Codespace
+      env:
+        GH_TOKEN: ${{ secrets.GH_PAT }}
+        CODESPACE_NAME: fantastic-dollop  # 👈 your Codespace name
+        USERNAME: Hello405p               # 👈 your GitHub username
+      run: |
+        curl -X POST \
+          -H "Authorization: Bearer $GH_TOKEN" \
+          -H "Accept: application/vnd.github+json" \
+          https://api.github.com/users/${USERNAME}/codespaces/${CODESPACE_NAME}/start
