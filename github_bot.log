@@ -1,0 +1,71 @@
+2025-08-08 10:44:43,386 - INFO - 🚀 Starting GitHub login process...
+2025-08-08 10:44:43,386 - INFO - Setting up Chrome WebDriver...
+2025-08-08 10:44:43,386 - INFO - ====== WebDriver manager ======
+2025-08-08 10:44:43,394 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-08 10:44:43,394 - ERROR - ❌ Unexpected error during login: 'NoneType' object has no attribute 'split'
+2025-08-08 10:44:43,394 - INFO - Keeping browser open for 5 seconds...
+2025-08-08 10:45:39,934 - INFO - 🚀 Starting GitHub login process...
+2025-08-08 10:45:39,935 - INFO - Setting up Chrome WebDriver...
+2025-08-08 10:45:39,935 - INFO - ====== WebDriver manager ======
+2025-08-08 10:45:39,996 - INFO - There is no [linux64] chromedriver "120.0.6099.109" for browser google-chrome "139.0.7258" in cache
+2025-08-08 10:45:40,031 - INFO - WebDriver version 120.0.6099.109 selected
+2025-08-08 10:45:40,034 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/120.0.6099.109/linux64/chromedriver-linux64.zip
+2025-08-08 10:45:40,034 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/120.0.6099.109/linux64/chromedriver-linux64.zip
+2025-08-08 10:45:40,052 - INFO - Driver downloading response is 200
+2025-08-08 10:45:40,180 - INFO - Driver has been saved in cache [/home/ubuntu/.wdm/drivers/chromedriver/linux64/120.0.6099.109]
+2025-08-08 10:45:40,835 - ERROR - ❌ Failed to setup Chrome WebDriver with webdriver-manager: Message: session not created: This version of ChromeDriver only supports Chrome version 120
+Current browser version is 139.0.7258.66 with binary path /usr/bin/google-chrome-stable
+Stacktrace:
+#0 0x556af9c09f83 <unknown>
+#1 0x556af98c2cf7 <unknown>
+#2 0x556af99005db <unknown>
+#3 0x556af98ff6ed <unknown>
+#4 0x556af98fa9a0 <unknown>
+#5 0x556af98f726e <unknown>
+#6 0x556af994780c <unknown>
+#7 0x556af993be53 <unknown>
+#8 0x556af9903dd4 <unknown>
+#9 0x556af99051de <unknown>
+#10 0x556af9bce531 <unknown>
+#11 0x556af9bd2455 <unknown>
+#12 0x556af9bbaf55 <unknown>
+#13 0x556af9bd30ef <unknown>
+#14 0x556af9b9e99f <unknown>
+#15 0x556af9bf7008 <unknown>
+#16 0x556af9bf71d7 <unknown>
+#17 0x556af9c09124 <unknown>
+#18 0x7f6c57ef9ef1 <unknown>
+#19 0x7f6c57f8b45c <unknown>
+
+2025-08-08 10:45:40,835 - INFO - Trying with system ChromeDriver...
+2025-08-08 10:45:41,822 - INFO - ✅ Chrome WebDriver setup successful with system driver
+2025-08-08 10:45:41,822 - INFO - Navigating to GitHub login page: https://github.com/login
+2025-08-08 10:45:42,142 - INFO - ✅ Successfully navigated to: https://github.com/login
+2025-08-08 10:45:42,150 - INFO - ✅ Page loaded successfully
+2025-08-08 10:45:42,150 - INFO - === DEBUG PAGE INFO ===
+2025-08-08 10:45:42,152 - INFO - Current URL: https://github.com/login
+2025-08-08 10:45:42,154 - INFO - Page Title: Sign in to GitHub · GitHub
+2025-08-08 10:45:42,175 - INFO - === END DEBUG INFO ===
+2025-08-08 10:45:42,176 - INFO - Looking for email/username field...
+2025-08-08 10:45:42,183 - INFO - ✅ Found email field using selector: #login_field
+2025-08-08 10:45:42,239 - INFO - ✅ Email field filled with: dasbristy468@gmail.com
+2025-08-08 10:45:42,246 - INFO - ✅ Email field value verified
+2025-08-08 10:45:42,246 - INFO - Looking for password field...
+2025-08-08 10:45:42,253 - INFO - ✅ Found password field using selector: #password
+2025-08-08 10:45:42,295 - INFO - ✅ Password field filled
+2025-08-08 10:45:42,300 - INFO - ✅ Password field value verified
+2025-08-08 10:45:42,300 - INFO - Looking for Sign in button...
+2025-08-08 10:45:42,317 - INFO - ✅ Found Sign in button using selector: input[type='submit'][value='Sign in']
+2025-08-08 10:45:42,352 - INFO - ✅ Sign in button clicked
+2025-08-08 10:45:45,362 - INFO - Current URL after login attempt: https://github.com/session
+2025-08-08 10:45:45,362 - INFO - ✅ Login appears successful - redirected away from login page
+2025-08-08 10:45:45,362 - INFO - === DEBUG PAGE INFO ===
+2025-08-08 10:45:45,365 - INFO - Current URL: https://github.com/session
+2025-08-08 10:45:45,367 - INFO - Page Title: Sign in to GitHub · GitHub
+2025-08-08 10:45:45,388 - WARNING - Error message found: Incorrect username or password.
+ 
+2025-08-08 10:45:45,401 - INFO - === END DEBUG INFO ===
+2025-08-08 10:45:45,401 - INFO - 🎉 Login process completed successfully!
+2025-08-08 10:45:45,401 - INFO - Keeping browser open for 5 seconds...
+2025-08-08 10:45:50,401 - INFO - Closing browser...
+2025-08-08 10:45:50,462 - INFO - ✅ Browser closed
