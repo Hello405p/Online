@@ -1,0 +1,39 @@
+name: Restart Codespace Smart
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  restart:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Restart Codespace if Needed
+      env:
+        GH_TOKEN: ${{ secrets.GH_PAT }}
+        CODESPACE_NAME: glowing-spork    # 👈 Your REAL codespace name here
+        USERNAME: Hello405p                      # 👈 Your GitHub username
+      run: |
+        echo "Checking codespace status..."
+
+        STATUS=$(curl -s -H "Authorization: Bearer $GH_TOKEN" \
+          https://api.github.com/users/${USERNAME}/codespaces/${CODESPACE_NAME} | jq -r '.state')
+
+        echo "Current state: $STATUS"
+
+        if [ "$STATUS" = "Available" ]; then
+          echo "Codespace is running. Stopping..."
+          curl -X POST -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/users/${USERNAME}/codespaces/${CODESPACE_NAME}/stop
+          sleep 10
+        else
+          echo "Codespace is already stopped."
+        fi
+
+        echo "Starting codespace..."
+        curl -X POST -H "Authorization: Bearer $GH_TOKEN" \
+          -H "Accept: application/vnd.github+json" \
+          https://api.github.com/users/${USERNAME}/codespaces/${CODESPACE_NAME}/start
